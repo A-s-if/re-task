@@ -71,9 +71,7 @@ const About = () => {
                 <Link to='/home'>HOME</Link>
                 <Link to='/typography'>TYPOGRAPHY</Link>
                 <Link to='/contacts'>CONTACTS</Link>
-                {
-                    userData.email && <Link to='/sign-in'>LOGIN</Link> 
-                }
+                <Link to='/sign-in'>LOGIN</Link>
                 
                 </MiddleNav>
 

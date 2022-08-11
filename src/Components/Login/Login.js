@@ -86,11 +86,7 @@ signInWithEmailAndPassword(auth, userData.email, userData.password)
 <Link to='/about'>ABOUT</Link>
 <Link to='/typography'>TYPOGRAPHY</Link>
 <Link to='/contacts'>CONTACTS</Link>
-<Link to='/task2'>TASK2</Link>
-<Link to='/task3'>TASK3</Link>
-{
-                    userData.email && <Link to='/sign-in'>LOGIN</Link> 
-                }
+<Link to='/sign-in'>LOGIN</Link>
 </MiddleNav>
 
 <RightNav>
