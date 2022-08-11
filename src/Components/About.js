@@ -71,7 +71,7 @@ const About = () => {
                 <Link to='/home'>HOME</Link>
                 <Link to='/typography'>TYPOGRAPHY</Link>
                 <Link to='/contacts'>CONTACTS</Link>
-                <Link to='/sign-in'>LOGIN</Link>
+                <Link to='/login'>LOGIN</Link>
                 
                 </MiddleNav>
 
