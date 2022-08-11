@@ -1,10 +1,52 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import style from 'styled-components';
 import Paper from '@mui/material/Paper';
-import { Box } from '@mui/system';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import PinterestIcon from '@mui/icons-material/Pinterest';
+import Rating from '@mui/material/Rating';
+import Box from '@mui/material/Box';
+import StarIcon from '@mui/icons-material/Star';
+import FastfoodIcon from '@mui/icons-material/Fastfood';
+import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+import SoupKitchenIcon from '@mui/icons-material/SoupKitchen';
+import { UseContext } from '../App';
+import { getAuth, signOut } from "firebase/auth";
+
+
+const labels = {
+    0.5: 'Useless',
+    1: 'Useless+',
+    1.5: 'Poor',
+    2: 'Poor+',
+    2.5: 'Ok',
+    3: 'Ok+',
+    3.5: 'Good',
+    4: 'Good+',
+    4.5: 'Excellent',
+    5: 'Excellent+',
+  };
 
 const About = () => {
+    function getLabelText(value) {
+        return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
+      }
+
+      const [value, setValue] = React.useState(2);
+  const [hover, setHover] = React.useState(-1);
+  
+  const [userData,setUserData]=useContext(UseContext);
+  console.log(userData)
+
+
+
+
     return (
         <Container>
             <NavDiv style={{
@@ -29,9 +71,10 @@ const About = () => {
                 <Link to='/home'>HOME</Link>
                 <Link to='/typography'>TYPOGRAPHY</Link>
                 <Link to='/contacts'>CONTACTS</Link>
-                <Link to='/task2'>TASK2</Link>
-                <Link to='task3'>TASK3</Link>
-                <Link to='/sign-in'>LOGIN</Link>
+                {
+                    userData.email && <Link to='/sign-in'>LOGIN</Link> 
+                }
+                
                 </MiddleNav>
 
                 <RightNav>
@@ -68,46 +111,62 @@ const About = () => {
                 <h1>Why People Choose Us</h1>
 
                 <OpurtunatySubDiv>
-                    <div> <h1>Friedly Team</h1> <br />
+                    <div> <FastfoodIcon sx={{
+                        fontSize:'40px'
+                    }}></FastfoodIcon> <h1>Friedly Team</h1> 
                     <p>Morbi tristique senectus et netus et <br />
                     malesuada fames ac turpis.</p> </div>
-                    <div><h1>Fresh Food</h1>
-                    <br />
+
+                    <div><DinnerDiningIcon sx={{
+                        fontSize:'40px'
+                    }}></DinnerDiningIcon><h1>Fresh Food</h1>
                     <p>
                     Cun conculium accelerare,omnes <br />
                              absolutioes quaestio fatalis.</p></div>
+
                     <div>
+                        <LocalDiningIcon sx={{
+                        fontSize:'40px'
+                    }}></LocalDiningIcon>
                         <h1>Quality Cuisine</h1>
-                        <br />
                         <p>
                             Cun conculium accelerare,omnes <br />
                              absolutioes quaestio fatalis.
                         </p>
                     </div>
+
                     <div>
+                        <RestaurantIcon sx={{
+                        fontSize:'40px'
+                    }}></RestaurantIcon>
                         <h1>
                             Best Service
                         </h1>
-                        <br />
                         <p>
                     Cun conculium accelerare,omnes <br />
                              absolutioes quaestio fatalis.</p>
                     </div>
+
                     <div>
+                        <RestaurantMenuIcon sx={{
+                        fontSize:'40px'
+                    }}></RestaurantMenuIcon>
                         <h1>
                             Diverse Menu
                         </h1>
-                        <br />
                         <p>
                             Cun conculium accelerare,omnes <br />
                              absolutioes quaestio fatalis.
                         </p>
                     </div>
+                    
                     <div>
+                        <SoupKitchenIcon sx={{
+                        fontSize:'40px'
+                    }}></SoupKitchenIcon>
                         <h1>
                             Affordable Prices
                         </h1>
-                        <br />
                         <p>Morbi tristique senectus et netus et <br />
                     malesuada fames ac turpis.</p>
                     </div>
@@ -157,7 +216,33 @@ const About = () => {
                         <h1>Get Multipurpose  <b>Monstroid</b><sup>2</sup> Template!</h1> <br />
                         <p>400+ HTML Files <span></span> 21 Niche Templates <span></span> All Source Files <span></span> Regular Updates</p>
                         <br />
-                        
+
+                        <Box
+      sx={{
+        width: 200,
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <Rating
+        name="hover-feedback"
+        value={value}
+        precision={0.5}
+        getLabelText={getLabelText}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        onChangeActive={(event, newHover) => {
+          setHover(newHover);
+        }}
+        emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+      />
+      {value !== null && (
+        <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+      )}
+    </Box>
+                       <br />
+                       <br /> 
 
                         <button>VIEW NOW!</button>
                     </TemplateSubDiv>
@@ -185,7 +270,39 @@ const About = () => {
                     <Link to='/contacts'>CONACTS</Link>
                     <Link to='/'>GALLERY</Link>
                     <Link to='/about'>ABOUT</Link>
-                </LastNavDiv>
+                </LastNavDiv><br />
+                <br />
+                <IconDiv>
+                    <YouTubeIcon sx={{
+                        fontSize:'50px',
+                        color:'#fff',
+                        cursor:'pointer'
+                    }}></YouTubeIcon>
+
+                    <FacebookIcon sx={{
+                        fontSize:'40px',
+                        color:'#fff',
+                        cursor:'pointer'
+                    }}></FacebookIcon>
+
+                    <TwitterIcon sx={{
+                        fontSize:'40px',
+                        color:'#fff',
+                        cursor:'pointer'
+                    }}></TwitterIcon>
+
+                    <InstagramIcon sx={{
+                        fontSize:'40px',
+                        color:'#fff',
+                        cursor:'pointer'
+                    }}></InstagramIcon>
+
+                    <PinterestIcon sx={{
+                        fontSize:'40px',
+                        color:'#fff',
+                        cursor:'pointer'
+                    }}/>
+                </IconDiv>
                 <br />
                 <br />
                 <br />
@@ -248,6 +365,7 @@ a{
     color:black;
     font-weight:bold;
     transition:0.5s;
+    cursor:pointer;
     :hover{
         background-color:rgb(242, 240, 240);
         border-radius:5px;
@@ -270,7 +388,7 @@ sup{
 p{
     margin-top:-10px;
     font-size:10px;
-    margin-left:-38px;
+    margin-left:-30px;
     cursor:pointer;
     color:white;
 }
@@ -326,6 +444,7 @@ color:white;
 display:flex;
 justify-content:center;
 align-items:center;
+text-align:center;
 `
 
 const TestimonialSubDiv=style.div`
@@ -351,13 +470,17 @@ justify-content:space-evenly;
 `
 
 const TemplateDiv=style.div`
-
+text-align:center;
 `
 
 const TemplateSubDiv=style.div`
 background-color: rgb(66, 82, 205);
 color:white;
 padding-bottom:20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 p{
     span{
         background-color:blue;
@@ -391,4 +514,12 @@ a{
     text-decoration:none;
     color:white;
 }
+`
+
+
+const IconDiv=style.div`
+display:flex;
+justify-content:space-between;
+width:410px;
+align-items:center;
 `

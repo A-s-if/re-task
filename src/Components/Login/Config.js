@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyBR6G450ezGxxggh9SmTwHWgM1dM-_8qYg",
-    authDomain: "pesto-84899.firebaseapp.com",
-    projectId: "pesto-84899",
-    storageBucket: "pesto-84899.appspot.com",
-    messagingSenderId: "36570256586",
-    appId: "1:36570256586:web:df372de56dddfe24fc9033"
-  };
+  apiKey: "AIzaSyCnUia9dJ4m067-L_bGLDuDU9BF-JQII7k",
+  authDomain: "re-task-6b19b.firebaseapp.com",
+  projectId: "re-task-6b19b",
+  storageBucket: "re-task-6b19b.appspot.com",
+  messagingSenderId: "252971002774",
+  appId: "1:252971002774:web:563a363f7539f17ba3cbb7"
+};

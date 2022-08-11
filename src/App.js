@@ -11,10 +11,26 @@ import Contact from './Components/Contact';
 import Task2 from './Components/Task2';
 import Task3 from './Components/Task3';
 import Login from './Components/Login/Login';
+import { createContext } from 'react';
+import { useState } from 'react';
+import BookNow from './Components/BookNow';
+import SecretNumber from './Components/SecretNumber';
+import PrivateRoute from './Components/PrivateRoute';
+
+export const UseContext=createContext();
 
 function App() {
+
+ 
+
+  const [userData,setUserData]=useState({
+    email:'',
+    password:''
+  })
+
+  
   return (
-    <div className="App">
+    <UseContext.Provider value={[userData,setUserData]}>
       <Router>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
@@ -24,10 +40,16 @@ function App() {
           <Route path='/task3' element={<Task3></Task3>}></Route>
           <Route path='/home' element={<Home></Home>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
+          <Route element={<PrivateRoute></PrivateRoute>}>
+          <Route path='/bookNow' element={<BookNow></BookNow>}></Route>
+          </Route>
+          <Route path='/confirm' element={<SecretNumber></SecretNumber>}></Route>
         </Routes>
       </Router>
+
+    </UseContext.Provider>
       
-    </div>
+    
   );
 }
 
