@@ -65,7 +65,7 @@ const Contact = () => {
                 </LeftNav>
 
                 <MiddleNav>
-                <Link to='/home'>HOME</Link>
+                <Link to='/'>HOME</Link>
                 <Link to='/about'>ABOUT</Link>
                 <Link to='/typography'>TYPOGRAPHY</Link>
                 <Link to='/login'>LOGIN</Link>

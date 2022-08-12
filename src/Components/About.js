@@ -68,7 +68,7 @@ const About = () => {
                 </LeftNav>
 
                 <MiddleNav>
-                <Link to='/home'>HOME</Link>
+                <Link to='/'>HOME</Link>
                 <Link to='/typography'>TYPOGRAPHY</Link>
                 <Link to='/contacts'>CONTACTS</Link>
                 <Link to='/login'>LOGIN</Link>

@@ -83,6 +83,7 @@ signInWithEmailAndPassword(auth, userData.email, userData.password)
 </LeftNav>
 
 <MiddleNav>
+<Link to='/'>HOME</Link>
 <Link to='/about'>ABOUT</Link>
 <Link to='/typography'>TYPOGRAPHY</Link>
 <Link to='/contacts'>CONTACTS</Link>
