@@ -119,37 +119,24 @@ const Contact = () => {
 
             </MapDiv>
 
+            {/* Sign In Div */}
+
             <SignInDiv>
                 <h1>Get in Touch</h1>
 
-                <TextField id="outlined-basic" label="Your Name" variant="outlined" sx={{
-                    width:'500px',
-                    marginBottom:'10px'
-                }} />
+                <Input id="outlined-basic" label="Your Name" variant="outlined"/>
 
-                <TextField id="outlined-basic"  label="E-mail" variant="outlined" sx={{
-                    width:'500px',
-                    marginBottom:'10px'
-                }} />
+                <Input id="outlined-basic"  label="E-mail" variant="outlined" />
 
-                <TextField id="outlined-basic"  label="Phone" variant="outlined" sx={{
-                    width:'500px',
-                    marginBottom:'10px'
-                }} />
+                <Input id="outlined-basic"  label="Phone" variant="outlined"/>
 
-                <TextField
-                        id="outlined-textarea"
-                        label="Massage"
-                        multiline
-                        sx={{
-                            width:'500px',
-                            marginBottom:'10px'
-                        }}/>
+                <Input id="outlined-textarea" label="Massage" multiline/>
 
                 <Button variant="contained" sx={{
                     fontSize:'20px',
                     width:'200px',
-                    textAlign:'center'
+                    textAlign:'center',
+                    marginTop:'10px'
                 }}> Send <SendIcon sx={{
                     fontSize: '30px',
                     marginLeft:'10px',
@@ -403,12 +390,25 @@ background-position:center;
 height:70vh;
 `
 
+/* Sign In Div */
+
 const SignInDiv=style.div`
 padding:100px 0px;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+`
+
+/* Input */
+
+const Input=style(TextField)`
+width:500px;
+padding:10px 0;
+
+@media(max-width:767px){
+    width:90vw;
+}
 `
 
 const TemplateDiv=style.div`
