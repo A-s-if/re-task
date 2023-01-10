@@ -8,8 +8,6 @@ import
 import Home from './Components/Home';
 import About from './Components/About';
 import Contact from './Components/Contact';
-import Task2 from './Components/Task2';
-import Task3 from './Components/Task3';
 import Login from './Components/Login/Login';
 import { createContext } from 'react';
 import { useState } from 'react';
@@ -33,6 +31,7 @@ function App() {
     <UseContext.Provider value={[userData,setUserData]}>
       <Router>
         <Routes>
+          
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/about' element={<About></About>}></Route>
           <Route path='/contacts' element={<Contact></Contact>}></Route>
@@ -43,7 +42,7 @@ function App() {
           <Route path='/confirm' element={<SecretNumber></SecretNumber>}></Route>
         </Routes>
       </Router>
-
+    
     </UseContext.Provider>
       
     

@@ -18,13 +18,14 @@ const Login = () => {
 
   const[newUser,setNewUser]=useState(false);
 
- 
+  const [getData,setGetData]=useState({email:'',password:''});
+  console.log(getData)
 
 
   const handleUserData=(even)=>{
-    const info={...userData};
+    const info={...getData};
     info[even.target.type]=even.target.value;
-    setUserData(info)
+    setGetData(info)
   }
 
   /* google sign in */
@@ -48,10 +49,10 @@ signInWithPopup(auth, provider)
     e.preventDefault()
     if(newUser ){
       const auth = getAuth();
-createUserWithEmailAndPassword(auth, userData.email, userData.password)
+createUserWithEmailAndPassword(auth, getData.email, setGetData.password)
   .then((userCredential) => {
     const user = userCredential.user;
-    console.log(user)
+    console.log(user.name)
   })
   .catch((error) => {
   });
@@ -60,7 +61,7 @@ createUserWithEmailAndPassword(auth, userData.email, userData.password)
 
     if(!newUser){
       const auth = getAuth();
-signInWithEmailAndPassword(auth, userData.email, userData.password)
+signInWithEmailAndPassword(auth, getData.email, setGetData.password)
   .then((userCredential) => {
     const user = userCredential.user;
     console.log(user)

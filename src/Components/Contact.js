@@ -48,14 +48,14 @@ const Contact = () => {
                 backgroundPosition:'center',
                 backgroundRepeat:'no-repeat',
                 backgroundSize:'cover',
-                height:"100vh"
+                height:"40vw",
 
             }}>
             <Navigation>
             
                 <LeftNav>
                 <Link to='/'>
-                <i>Pesto <sup style={{
+                <i>Trimke <sup style={{
                     backgroundColor:'yellow',
                     color:'black',
                     padding:'0px 5px'
@@ -97,7 +97,7 @@ const Contact = () => {
                         </h3>
                     </div>
                     <div>
-                        <SendIcon sx={{fontSize: '50px',marginLeft:'60px' }}></SendIcon>
+                        <SendIcon sx={{fontSize: '50px',marginLeft:'60px' }} ></SendIcon>
                         <h3>
                             Info@demolink.org
                         </h3>
@@ -199,7 +199,7 @@ const Contact = () => {
 
 
             <LastDiv>
-            <LeftNav><i>Pesto <sup style={{
+            <LeftNav><i>Trimke <sup style={{
                     backgroundColor:'yellow',
                     color:'black',
                     padding:'0px 5px'
@@ -267,9 +267,9 @@ export default Contact;
 const Container=style.div``
 
 const NavDiv=style.div`
-height:80vh;
 width:100vw;
-`;
+z-index:2;
+`
 const Navigation=style.nav`
 background-color: rgba(255, 255, 255, 0.1);
 width:100vw;
@@ -278,12 +278,20 @@ justify-content:space-between;
 align-items:center;
 display:flex;
 position:fixed;
+z-index:2;
+@media(max-width:1023px){
+    background-color:red;
+}
+@media(max-width:767px){
+    background-color:gray;
+    height:70px;
+}
 `;
 const RightNav=style.div`
-height:10px;
+height:20px;
 width:100px;
 display:flex;
-align-items:center;
+justify-content:center;
 padding-right:40px;
 color:black;
 a{
@@ -295,10 +303,19 @@ a{
     height:20px;
     display:flex;
     align-items:center;
+    margin-left:25px;
 }
 a:hover{
     color:red;
 }
+
+@media(max-width:767px){
+    width:70px;
+    a{
+        padding:0 5px;
+    }
+}
+
 `;
 const MiddleNav=style.div`
 display:flex;
@@ -306,29 +323,38 @@ justify-content:space-between;
 align-items:center;
 width:450px;
 height:50px;
+@media(max-width:600px){
+    font-size:10px;
+    font-weight:bold;
+    width:350px;
+}
 
 a{
     text-decoration:none;
     color:black;
-    font-size:13px; 
+    font-size:13px;
     padding:3px 5px;
-    font-weight: bold;
+    font-weight:bold;
     transition:0.5s;
     :hover{
         background-color:rgb(242, 240, 240);
         border-radius:5px;
     }
+
+    @media(max-width:600px){
+        font-size:10px;
+        font-weight:bold;
+    }
 }
 `;
 const LeftNav=style.div`
 padding-left:40px;
-a{
-    text-decoration:none;
-}
+text-align:center;
 i{
     font-size:30px;
     cursor:pointer;
-    color:black;
+    color:white;
+    
 }
 sup{
     font-size:12px;
@@ -336,9 +362,23 @@ sup{
 p{
     margin-top:-10px;
     font-size:10px;
-    margin-left:-38px;
+    margin-left:-30px;
     cursor:pointer;
-    color:black;
+    color:white;
+}
+
+a{
+    text-decoration:none;
+}
+
+@media(max-width:767px){
+    padding-left:10px;
+    i{
+        font-size:15px;
+    }
+    p{
+        margin-top:2px;
+    }
 }
 `
 

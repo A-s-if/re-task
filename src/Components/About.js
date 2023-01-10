@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import style from 'styled-components';
-import Paper from '@mui/material/Paper';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -49,23 +48,32 @@ const About = () => {
 
     return (
         <Container>
+
+            {/* Nav div */}
             <NavDiv style={{
                 backgroundImage:`url('https://xindian.x-grouprestaurant.com/uploads/cfff96d7e822bdcec261ff181b0b02df.jpg')`,
                 backgroundPosition:'center',
                 backgroundRepeat:'no-repeat',
                 backgroundSize:'cover',
-                height:'100vh',
+                height:'60vw',
 
             }}>
+
+                {/* Navigation */}
+
             <Navigation>
 
-                <LeftNav><i>Pesto <sup style={{
+                {/* Left Nav */}
+
+                <LeftNav><i>Trimke <sup style={{
                     backgroundColor:'yellow',
                     color:'black',
                     padding:'0px 5px'
                 }}>Free </sup></i> 
                 <p>ITALIAN FOOD</p>
                 </LeftNav>
+
+                {/* Middle Nav */}
 
                 <MiddleNav>
                 <Link to='/'>HOME</Link>
@@ -75,6 +83,8 @@ const About = () => {
                 
                 </MiddleNav>
 
+                {/* Right Nav */}
+
                 <RightNav>
                     <Link to='/bookNow'> <pre>BOOK NOW</pre> </Link>
                 </RightNav>
@@ -82,12 +92,15 @@ const About = () => {
             </Navigation>
             </NavDiv>
 
+            {/* About Restuarant Div */}
+
             <AboutRestuarantDiv>
+
+            {/* About Restuarant Sub Div */}
+
                 <AboutRestuarantSubDiv>
-                <Paper elevation={4}>
-                    <img src="https://cdn.create.vista.com/api/media/medium/185007706/stock-photo-view-stylish-empty-cafe-arranged?token=" alt="" />
+                    <img loading='eager' src="https://cdn.create.vista.com/api/media/medium/185007706/stock-photo-view-stylish-empty-cafe-arranged?token=" alt="" />
                     
-                    </Paper>
                     <div>
                     <h1>About Our Restuarant</h1>
                     <h2>We offered the best italian dishes in a <br />
@@ -103,10 +116,12 @@ const About = () => {
                 </AboutRestuarantSubDiv>
             </AboutRestuarantDiv>
 
-
+            {/* Opurtunaty Div */}
                 
             <OpurtunatyDiv>
                 <h1>Why People Choose Us</h1>
+
+                {/* Opurtunaty Sub Div */}
 
                 <OpurtunatySubDiv>
                     <div> <FastfoodIcon sx={{
@@ -171,7 +186,12 @@ const About = () => {
                 </OpurtunatySubDiv>
             </OpurtunatyDiv>
 
+            {/* Testimonial Div */}
+
             <TestimonialDiv>
+
+                {/* Testimonial Sub Div */}
+
                 <TestimonialSubDiv>
                     <h1>Testimonials</h1>
                     <br />
@@ -181,11 +201,16 @@ const About = () => {
                 </TestimonialSubDiv>
             </TestimonialDiv>
 
+            {/* Award Div */}
+
             <AwardDiv>
                 <h1>Our Awards</h1>
                 <br />
                 <br />
                 <br />
+
+                {/* Award Sub Div */}
+
                 <AwardSubDiv>
                     <div>
                         <h3>
@@ -209,6 +234,8 @@ const About = () => {
                     </div>
                 </AwardSubDiv>
             </AwardDiv>
+
+
             <TemplateDiv>
                     <TemplateSubDiv>
                         <h1>Get Multipurpose  <b>Monstroid</b><sup>2</sup> Template!</h1> <br />
@@ -248,7 +275,10 @@ const About = () => {
 
 
             <LastDiv>
-            <LeftNav><i>Pesto <sup style={{
+
+                {/* Left Nav */}
+                
+            <LeftNav><i>Trimke <sup style={{
                     backgroundColor:'yellow',
                     color:'black',
                     padding:'0px 5px'
@@ -317,10 +347,16 @@ const About = () => {
 export default About;
 
 const Container=style.div``
+
+/* Nav Div */
+
 const NavDiv=style.div`
 height:80vh;
 width:100vw;
 `;
+
+/* Navigation */
+
 const Navigation=style.nav`
 background-color: rgba(255, 255, 255, 0.1);
 width:100vw;
@@ -329,12 +365,22 @@ justify-content:space-between;
 align-items:center;
 display:flex;
 position:fixed;
+@media(max-width:1023px){
+    background-color:red;
+}
+@media(max-width:767px){
+    background-color:gray;
+    height:70px;
+}
 `;
+
+/* Right Nav */
+
 const RightNav=style.div`
-height:10px;
+height:20px;
 width:100px;
 display:flex;
-align-items:center;
+justify-content:center;
 padding-right:40px;
 color:black;
 a{
@@ -346,34 +392,59 @@ a{
     height:20px;
     display:flex;
     align-items:center;
+    margin-left:25px;
 }
 a:hover{
     color:red;
 }
+
+@media(max-width:767px){
+    width:70px;
+    a{
+        padding:0 5px;
+    }
+}
+
 `;
+
+/* Middle Nav */
+
 const MiddleNav=style.div`
 display:flex;
 justify-content:space-between;
 align-items:center;
-width:600px;
-height:50px; 
+width:450px;
+height:50px;
+@media(max-width:600px){
+    font-size:10px;
+    font-weight:bold;
+    width:350px;
+}
+
 a{
-    padding:3px 5px;
     text-decoration:none;
     color:black;
+    font-size:13px;
+    padding:3px 5px;
     font-weight:bold;
     transition:0.5s;
-    cursor:pointer;
     :hover{
         background-color:rgb(242, 240, 240);
         border-radius:5px;
     }
-}
 
+    @media(max-width:600px){
+        font-size:10px;
+        font-weight:bold;
+    }
 }
 `;
+
+/* Left Nav */
+
 const LeftNav=style.div`
 padding-left:40px;
+text-align:center;
 i{
     font-size:30px;
     cursor:pointer;
@@ -390,50 +461,126 @@ p{
     cursor:pointer;
     color:white;
 }
+
+@media(max-width:767px){
+    padding-left:10px;
+    i{
+        font-size:15px;
+    }
+    p{
+        margin-top:2px;
+    }
+}
 `
 
+/* About Restuarant Div */
+
 const AboutRestuarantDiv=style.div`
-height:100vh;
 width:100vw;
 background-color: rgb(237, 237, 237);
+padding:50px 0;
 display:flex;
 justify-content:center;
 align-items:center;
 `
 
+/* About Restuarant Sub Div */
+
 const AboutRestuarantSubDiv=style.div`
 display:flex;
 justify-content:space-between;
 width:1200px;
-height:400px;
 img{
     height:400px;
     width:400px;
+    margin:0 20px 0 0;
 }
+
+
+@media(max-width:1023px){
+    flex-direction:column;
+    align-items:center;
+    div{
+        text-align:center;
+    }
+}
+
 `
+
+/* Opurtunaty Div */
 
 const OpurtunatyDiv=style.div`
 width:100vw;
-height:80vh;
 display:flex;
+margin:0 0 10px 0;
 flex-direction: column;
 justify-content:center;
 align-items:center;
 h1{
     font-size:40px;
 }
+@media(max-width:1023px){
+    flex-direction:column;
+    align-items:center;
+    div{
+        h1{
+            font-size:30px;
+        }
+
+        h2{
+            font-size:20px;
+        }
+    }
+        
+    }
+
+    @media(max-width:767px){
+    h1{
+        font-size:30px;
+    }
+    }
+
+
 `
+
+/* Opurtunaty Sub Div */
 
 const OpurtunatySubDiv=style.div`
 width:800px;
-height:50vh;
 display:flex;
 flex-wrap:wrap;
 justify-content:space-evenly;
+div{
+    border:2px solid rgba(86, 84, 84, 0.5);
+    width:200px;
+    margin:10px 0 0 0;
+}
 h1{
     font-size:30px;
 }
+@media(max-width:1023px){
+    width:100vw;
+    div{
+        width:30vw;
+        h1{
+            font-size:25px;
+        }
+    }
+    
+}
+
+@media(max-width:767px){
+    div{
+
+        width:250px;
+        h1{
+            font-size:30px;
+        }
+    }
+}
 `
+
+/* Testimonial Div */
 
 const TestimonialDiv=style.div`
 height:70vh;
@@ -445,11 +592,17 @@ align-items:center;
 text-align:center;
 `
 
+/* Testimonial Sub Div */
+
 const TestimonialSubDiv=style.div`
 p{
     font-size:20px;
 }
+
+@media(width:767)
 `
+
+/* Award Div */
 
 const AwardDiv=style.div`
 height:60vh;
@@ -461,15 +614,34 @@ justify-content:center;
 align-items:center;
 `
 
+/* AwardSubDiv */
+
 const AwardSubDiv=style.div`
 width:900px;
 display:flex;
 justify-content:space-evenly;
+
+div{
+    width:160px;
+}
+
+@media(max-width:1023px){
+    width:766px;
+}
+
+@media(max-width:767px){
+    width:100vw;
+    flex-wrap:wrap;
+}
 `
+
+/* Template Div */
 
 const TemplateDiv=style.div`
 text-align:center;
 `
+
+/* Template Sub Div */
 
 const TemplateSubDiv=style.div`
 background-color: rgb(66, 82, 205);
@@ -496,13 +668,18 @@ button{
 }
 `
 
+/* Last Div */
+
 const LastDiv=style.div`
 padding:50px 0px;
 background-color:rgb(62, 61, 61);
+text-align:center;
 display:flex;
 flex-direction:column;
 align-items:center;
 `
+
+/* Last Nav Div */
 
 const LastNavDiv=style.div`
 width:500px;
@@ -512,12 +689,19 @@ a{
     text-decoration:none;
     color:white;
 }
+@media(max-width:767px){
+    width:100vw;
+}
 `
 
+/* Icon Div */
 
 const IconDiv=style.div`
 display:flex;
 justify-content:space-between;
 width:410px;
 align-items:center;
+@media(max-width:767px){
+    width:100vw;
+}
 `
