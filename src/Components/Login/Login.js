@@ -75,7 +75,7 @@ signInWithEmailAndPassword(auth, getData.email, setGetData.password)
     <div>
       <Navigation>
 
-<LeftNav><i>Pesto <sup style={{
+<LeftNav><i>Trimke <sup style={{
     backgroundColor:'yellow',
     color:'black',
     padding:'0px 5px'
@@ -86,9 +86,7 @@ signInWithEmailAndPassword(auth, getData.email, setGetData.password)
 <MiddleNav>
 <Link to='/'>HOME</Link>
 <Link to='/about'>ABOUT</Link>
-<Link to='/typography'>TYPOGRAPHY</Link>
 <Link to='/contacts'>CONTACTS</Link>
-<Link to='/login'>LOGIN</Link>
 </MiddleNav>
 
 <RightNav>

@@ -60,7 +60,6 @@ const Home = () => {
 
                 <MiddleNav>
                 <Link to='/about'>ABOUT</Link>
-                <Link to='/typography'>TYPOGRAPHY</Link>
                 <Link to='/contacts'>CONTACTS</Link>
                 <Link to='/login'>LOGIN</Link>
                 </MiddleNav>
