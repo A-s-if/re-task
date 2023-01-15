@@ -1,3 +1,8 @@
+## Project Title
+Trimke Italian Food
+## About Project
+This is a e-commerce-site. Hotel seats can be booked in advance with the help of this site. To book a seat an account must be successfully opened with the required information by clicking on the login button. Once the account is opened click on the book now button and fill in the required information to book the seat.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

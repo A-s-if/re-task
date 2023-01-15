@@ -55,7 +55,7 @@ const About = () => {
                 backgroundPosition:'center',
                 backgroundRepeat:'no-repeat',
                 backgroundSize:'cover',
-                height:'60vw',
+                width:'100vw',
 
             }}>
 
@@ -467,6 +467,7 @@ p{
         font-size:15px;
     }
     p{
+        border:2px solid black;
         margin-top:2px;
     }
 }
@@ -490,16 +491,22 @@ display:flex;
 justify-content:space-between;
 width:1200px;
 img{
+    border:2px solid black;
     height:400px;
     width:400px;
     margin:0 20px 0 0;
 }
+div{
+    border:2px solid black;
+}
 
 
 @media(max-width:1023px){
+    border:2px solid black;
     flex-direction:column;
     align-items:center;
     div{
+        border:2px solid black;
         text-align:center;
     }
 }
@@ -582,6 +589,7 @@ h1{
 /* Testimonial Div */
 
 const TestimonialDiv=style.div`
+width:100vw;
 height:70vh;
 background-image:url('/about/images (1).jfif');
 color:white;
@@ -605,7 +613,6 @@ p{
 
 const AwardDiv=style.div`
 height:60vh;
-width:100vw;
 background-color: white;
 display:flex;
 flex-direction:column;

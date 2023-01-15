@@ -415,11 +415,7 @@ align-items:center;
 display:flex;
 position:fixed;
 z-index:2;
-@media(max-width:1023px){
-    background-color:red;
-}
 @media(max-width:767px){
-    background-color:gray;
     height:70px;
 }
 `;

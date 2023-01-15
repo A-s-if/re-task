@@ -1,4 +1,5 @@
-import { Button, TextField } from '@mui/material';
+import {TextField } from '@mui/material';
+import Button from '@mui/material/Button';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import style from 'styled-components';
@@ -98,39 +99,16 @@ signInWithEmailAndPassword(auth, getData.email, setGetData.password)
       <form onSubmit={handleCreateAccount}>
         <h1>{newUser ? 'Log In' : 'Sign In'}</h1>
         {
-          newUser && <TextField id="outlined-basic" label="Enter your name" variant="outlined" sx={{
-            width:'500px',
-            marginBottom:'10px'
-          }} />
+          newUser && <Input id="outlined-basic" label="Enter your name" variant="outlined" />
         }
         <br />
-        <TextField type='email' id="outlined-basic" label="Enter your email" variant="outlined" onBlur={handleUserData} sx={{
-          width:'500px',
-          marginBottom:'10px'
-        }} /><br />
-        <TextField type='password' id="outlined-basic1" label="Enter your password" variant="outlined" onBlur={handleUserData} sx={{
-          width:'500px',
-          marginBottom:'10px'
-        }} />
+        <Input type='email' id="outlined-basic" label="Enter your email" variant="outlined" onBlur={handleUserData} /><br />
+        <Input type='password' id="outlined-basic1" label="Enter your password" variant="outlined" onBlur={handleUserData}  />
 
         
-        <input type="submit" name="" value='Submit' id="" style={{
-          fontSize:'25px',
-          height:'50px',
-          width:'500px',
-          backgroundColor:'rgb(9, 138, 9)',
-          color:'white',
-          border:'none',
-          borderRadius:'5px',
-          cursor:'pointer',
-          marginBottom:'10px'
-        }} />
+        <Submit type="submit" name="" value='Submit' id="" />
 
-      <Button variant="contained" onClick={handleGoogleSignIn} sx={{
-        height:'50px',
-        width:'500px',
-        fontSize:'20px'
-      }}><GoogleIcon fontSize='large'></GoogleIcon>  Sign In With Google</Button>
+      <SubmitButton variant="contained" onClick={handleGoogleSignIn} ><GoogleIcon ></GoogleIcon>  Sign In With Google</SubmitButton>
 
       <p>{newUser ? 'Already have an' : 'You have no'} account? Please <u onClick={()=> setNewUser(!newUser)} style={{
           cursor:'pointer'
@@ -149,6 +127,7 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+padding:50px 0 0 0;
 form{
   width:550px;
   height:500px;
@@ -158,23 +137,66 @@ form{
   justify-content:center;
   align-items:center;
   background-color:white;
+  @media(max-width:767px){
+    width:80vw;
+  }
+
 }
+`
+
+const Submit=style.input`
+    font-size:25px;
+    height:50px;
+    width:500px;
+    background-color:rgb(9, 138, 9);
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin:10px 0;
+    @media(max-width:767px){
+      width:70vw;
+    }
+`
+
+const Input=style(TextField)`
+width:500px;
+@media(max-width:767px){
+  width:70vw;
+}
+`
+
+const SubmitButton=style(Button)`
+  height:50px;
+  width:500px;
+  margin:50px 0 0 0;
+  @media(max-width:767px){
+    width:70vw;
+  }
 `
 
 const Navigation=style.nav`
 background-color: rgba(255, 255, 255, 0.1);
 width:100vw;
-height:80px;
+height:100px;
 justify-content:space-between;
 align-items:center;
 display:flex;
 position:fixed;
+z-index:2;
+@media(max-width:1023px){
+  background-color:red;
+}
+@media(max-width:767px){
+    height:70px;
+    background-color:gray;
+}
 `;
 const RightNav=style.div`
-height:10px;
+height:20px;
 width:100px;
 display:flex;
-align-items:center;
+justify-content:center;
 padding-right:40px;
 color:black;
 a{
@@ -186,10 +208,19 @@ a{
     height:20px;
     display:flex;
     align-items:center;
+    margin-left:25px;
 }
 a:hover{
     color:red;
 }
+
+@media(max-width:767px){
+    width:70px;
+    a{
+        padding:0 5px;
+    }
+}
+
 `;
 const MiddleNav=style.div`
 display:flex;
@@ -197,6 +228,11 @@ justify-content:space-between;
 align-items:center;
 width:450px;
 height:50px;
+@media(max-width:600px){
+    font-size:10px;
+    font-weight:bold;
+    width:350px;
+}
 
 a{
     text-decoration:none;
@@ -209,15 +245,21 @@ a{
         background-color:rgb(242, 240, 240);
         border-radius:5px;
     }
+
+    @media(max-width:600px){
+        font-size:10px;
+        font-weight:bold;
+    }
 }
 `;
 const LeftNav=style.div`
 padding-left:40px;
 text-align:center;
-color:black;
 i{
     font-size:30px;
     cursor:pointer;
+    color:white;
+    
 }
 sup{
     font-size:12px;
@@ -225,9 +267,19 @@ sup{
 p{
     margin-top:-10px;
     font-size:10px;
-    margin-left:-38px;
+    margin-left:-30px;
     cursor:pointer;
-    color:black;
+    color:white;
+}
+
+@media(max-width:767px){
+    padding-left:10px;
+    i{
+        font-size:15px;
+    }
+    p{
+        margin-top:2px;
+    }
 }
 `
 

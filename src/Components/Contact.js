@@ -265,11 +265,7 @@ align-items:center;
 display:flex;
 position:fixed;
 z-index:2;
-@media(max-width:1023px){
-    background-color:red;
-}
 @media(max-width:767px){
-    background-color:gray;
     height:70px;
 }
 `;
@@ -336,6 +332,9 @@ a{
 const LeftNav=style.div`
 padding-left:40px;
 text-align:center;
+a{
+    text-decoration:none;
+}
 i{
     font-size:30px;
     cursor:pointer;
@@ -353,10 +352,6 @@ p{
     color:white;
 }
 
-a{
-    text-decoration:none;
-}
-
 @media(max-width:767px){
     padding-left:10px;
     i{
@@ -369,8 +364,8 @@ a{
 `
 
 const InformationDiv=style.div`
-height:60vh;
 width:100vw;
+padding:50px 0;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -378,9 +373,24 @@ align-items:center;
 
 const InformationSubDiv=style.div`
 display:flex;
-justify-content:space-between;
+justify-content:space-evenly;
 color:rgb(41, 40, 40);
 width:800px;
+div{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+@media(max-width:1023px){
+    width:80vw;
+}
+@media(max-width:767px){
+    width:90vw;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
 `
 
 const MapDiv=style.div`
@@ -442,10 +452,13 @@ button{
 const LastDiv=style.div`
 padding:50px 0px;
 background-color:rgb(62, 61, 61);
+text-align:center;
 display:flex;
 flex-direction:column;
 align-items:center;
 `
+
+/* Last Nav Div */
 
 const LastNavDiv=style.div`
 width:500px;
@@ -455,11 +468,19 @@ a{
     text-decoration:none;
     color:white;
 }
+@media(max-width:767px){
+    width:100vw;
+}
 `
+
+/* Icon Div */
 
 const IconDiv=style.div`
 display:flex;
 justify-content:space-between;
 width:410px;
 align-items:center;
+@media(max-width:767px){
+    width:100vw;
+}
 `
