@@ -523,227 +523,6 @@ img{
 }
 `
 
-const AboutDiv=style.div`
-height:70vh;
-width:100vw;
-display:flex;
-align-items:center;
-margin-top:-70px;
-`
-
-/* About Sub Div */
-const AboutSubDiv=style.div`
-color:black;
-display:flex;
-justify-content:space-evenly;
-align-items:center;
-width:100vw;
-padding-top:50px;
-div{
-    width:480px;
-    padding:5px;
-    h1{
-        font-size:40px;
-    }
-
-
-}
-
-img{
-    height:385px; 
-}
-
-@media(max-width:1023px){
-    div{
-        width:420px;
-    }
-}
-
-@media(max-width:767px){
-    flex-direction:column;
-    text-align:center;
-    img{
-        height:300px;
-        margin-top:100px;
-    }
-    div{
-        width:90vw;
-        margin-bottom:50px;
-    }
-}
-
-`
-
-/* Featured Offers Div */
-
-const FeaturedOffersDiv=style.div`
-height:100vh;
-width:100vw;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-background-color:white;
-div{
-    height:400px;
-}
-h1{
-    font-size:35px;
-}
-img{
-    height:280px;
-    margin:0px 10px;
-
-}
-
-@media(max-width:1023px){
-    div{
-        img{
-            height:200px;
-        }
-    }
-}
-
-@media(max-width:767px){
-    height:700px;
-    div{
-        img{
-            width:60vw;
-        }
-    }
-}
-`
-
-/* Restaurant Menu Div */
-
-const RestaurantMenuDiv=style.div``
-
-/* Restaurant Menu Sub Div */
-
-const RestaurantMenuSubDiv=style.div`
-display:flex;
-flex-wrap:wrap;
-text-align:center;
-justify-content:center;
-padding:100px 0px;
-width:100vw;
-background-color: rgb(240, 237, 237);
-nav{
-    background-color:rgb(21, 20, 20);
-    width:800px;
-    height:80px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:8px 8px 0px 0px;
-    margin-top:50px;
-    div{
-        width:400px;
-        display:flex;
-        justify-content:space-between;
-    }
-    a{
-        text-decoration:none;
-        color:white;
-        font-weight: bold;
-        }
-@media(max-width:1023px){
-    width:700px;
-}
-
-@media(max-width:767px){
-    width:98vw;
-    border-radius:0;
-    div{
-        justify-content:space-evenly;
-    }
-}
-        
-}
-
-@media(max-width:767px){
-    margin-top:150px;
-}
-
-`
-
-/* Restaurant Menu Details Div */
-
-const RestaurantMenuDetailsDiv=style.div`
-border:2px solid rgba(86, 84, 84, 0.5);
-    display:flex;
-    justify-content:center;
-    background-color:white;
-    width:797px;
-    padding-bottom:50px;
-    @media(max-width:1023px){
-        width:697px;
-    }
-
-    @media(max-width:767px){
-        width:98vw;
-    }
-`
-
-/* Picture Div */
-
-const PictureDiv=style.div`
-width:100vw;
-display:flex;
-flex-wrap:wrap;
-justify-content:space-evenly;
-img{
-    width:32vw;
-    @media(max-width:767px){
-        width:50vw;
-    }
-}
-`
-
-/* News Div */
-
-const NewsDiv=style.div`
-padding-top:150px;
-div{
-    display:flex;
-    justify-content:space-evenly;
-    width:100vw;
-}
-`
-
-/* Template Div */
-
-const TemplateDiv=style.div`
-text-align:center;
-`
-
-/* Template Sub Div */
-
-const TemplateSubDiv=style.div`
-background-color: rgb(66, 82, 205);
-color:white;
-padding-bottom:20px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-p{
-    span{
-        background-color:blue;
-        height:10px;
-        width:0.2px;
-        cursor:pointer;
-    }
-}
-button{
-    background-color: rgb(249, 249, 16);
-    font-weight:bold;
-    border:none;
-    padding:10px 15px;
-    cursor:pointer;
-}
-`
-
 /* Main Booking Div */
 const MainBookingDiv=style.div`
 width:100vw;
@@ -806,6 +585,247 @@ button{
 }
 }
 `
+
+
+const AboutDiv=style.div`
+height:70vh;
+width:100vw;
+display:flex;
+align-items:center;
+margin-top:-70px;
+`
+
+/* About Sub Div */
+const AboutSubDiv=style.div`
+color:black;
+display:flex;
+justify-content:space-evenly;
+align-items:center;
+width:100vw;
+padding-top:50px;
+div{
+    width:480px;
+    padding:5px;
+    h1{
+        font-size:40px;
+    }
+
+
+}
+
+img{
+    height:385px; 
+}
+
+@media(max-width:1023px){
+    div{
+        width:420px;
+    }
+    
+}
+
+@media(max-width:767px){
+    flex-direction:column;
+    text-align:center;
+    img{
+        height:300px;
+        margin-top:100px;
+    }
+    div{
+        width:90vw;
+        margin-bottom:50px;
+        h1{
+            font-size:30px;
+        }
+    }
+}
+
+`
+
+/* Featured Offers Div */
+
+const FeaturedOffersDiv=style.div`
+height:100vh;
+width:100vw;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background-color:white;
+div{
+    height:400px;
+}
+h1{
+    font-size:35px;
+}
+img{
+    height:280px;
+    margin:0px 10px;
+
+}
+
+@media(max-width:1023px){
+    div{
+        img{
+            height:200px;
+        }
+    }
+}
+
+@media(max-width:767px){
+    height:700px;
+      h1{
+        font-size:30px;
+      }
+    div{
+        img{
+            width:60vw;
+        }
+    }
+
+}
+`
+
+/* Restaurant Menu Div */
+
+const RestaurantMenuDiv=style.div`
+@media(max-width:767px){
+    h1{
+        font-size:30px;
+    }
+}
+`
+
+/* Restaurant Menu Sub Div */
+
+const RestaurantMenuSubDiv=style.div`
+display:flex;
+flex-wrap:wrap;
+text-align:center;
+justify-content:center;
+padding:100px 0px;
+width:100vw;
+background-color: rgb(240, 237, 237);
+nav{
+    background-color:rgb(21, 20, 20);
+    width:800px;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:8px 8px 0px 0px;
+    margin-top:50px;
+    div{
+        width:400px;
+        display:flex;
+        justify-content:space-between;
+    }
+    a{
+        text-decoration:none;
+        color:white;
+        font-weight: bold;
+        }
+@media(max-width:1023px){
+    width:700px;
+}
+
+@media(max-width:767px){
+    width:98vw;
+    border-radius:0;
+    div{
+        justify-content:space-evenly;
+    }
+    
+}
+        
+}
+
+@media(max-width:767px){
+    margin-top:150px;
+}
+
+`
+
+/* Restaurant Menu Details Div */
+
+const RestaurantMenuDetailsDiv=style.div`
+border:2px solid rgba(86, 84, 84, 0.5);
+    display:flex;
+    justify-content:center;
+    background-color:white;
+    width:797px;
+    padding-bottom:50px;
+    @media(max-width:1023px){
+        width:697px;
+    }
+
+    @media(max-width:767px){
+        width:98vw;
+        h2{
+            font-size:20px;
+        }
+    }
+`
+
+/* Picture Div */
+
+const PictureDiv=style.div`
+width:100vw;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-evenly;
+img{
+    width:32vw;
+    @media(max-width:767px){
+        width:50vw;
+    }
+}
+`
+
+/* News Div */
+
+const NewsDiv=style.div`
+padding-top:150px;
+div{
+    display:flex;
+    justify-content:space-evenly;
+    width:100vw;
+}
+`
+
+/* Template Div */
+
+const TemplateDiv=style.div`
+text-align:center;
+`
+
+/* Template Sub Div */
+
+const TemplateSubDiv=style.div`
+background-color: rgb(66, 82, 205);
+color:white;
+padding-bottom:20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+p{
+    span{
+        background-color:blue;
+        height:10px;
+        width:0.2px;
+        cursor:pointer;
+    }
+}
+button{
+    background-color: rgb(249, 249, 16);
+    font-weight:bold;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+}
+`
+
 
 /* Last Div */
 
