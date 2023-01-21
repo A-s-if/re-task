@@ -407,7 +407,7 @@ width:100vw;
 z-index:2;
 `
 const Navigation=style.nav`
-background-color: rgba(255, 255, 255, 0.1);
+background-color: rgba(21, 20, 20, 0.1);
 width:100vw;
 height:100px;
 justify-content:space-between;

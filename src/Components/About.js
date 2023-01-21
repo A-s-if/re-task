@@ -364,11 +364,7 @@ justify-content:space-between;
 align-items:center;
 display:flex;
 position:fixed;
-@media(max-width:1023px){
-    background-color:red;
-}
 @media(max-width:767px){
-    background-color:gray;
     height:70px;
 }
 `;
@@ -467,7 +463,6 @@ p{
         font-size:15px;
     }
     p{
-        border:2px solid black;
         margin-top:2px;
     }
 }
@@ -491,7 +486,6 @@ display:flex;
 justify-content:space-between;
 width:1200px;
 img{
-    border:2px solid black;
     height:400px;
     width:400px;
     margin:0 20px 0 0;
@@ -502,11 +496,9 @@ div{
 
 
 @media(max-width:1023px){
-    border:2px solid black;
     flex-direction:column;
     align-items:center;
     div{
-        border:2px solid black;
         text-align:center;
     }
 }
